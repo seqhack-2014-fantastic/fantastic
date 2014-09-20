@@ -25,12 +25,22 @@ JSON data
 ### Setup
 
 ```
-export RIAK_SCHEMA_NAME="fantastic-dev"
 export RIAK_HOST="http://localhost:8098"
 
-curl -XPUT $RIAK_HOST/search/index/$RIAK_SCHEMA_NAME \
-     -H 'Content-Type: application/json' \
-     -d '{"schema":"_yz_default"}'
-riak-admin bucket-type create fantastic-dev '{"props":{"search_index":"$RIAK_SCHEMA_NAME"}}'
+curl -XPUT $RIAK_HOST/search/index/fantastic-dev -H 'Content-Type: application/json' -d '{"schema":"_yz_default"}'
+riak-admin bucket-type create fantastic-dev '{"props":{"search_index":"fantastic-dev"}}'
 riak-admin bucket-type activate fantastic-dev
 ```
+
+
+
+### Query language brainstorming
+
+users where release date is greater than 2010
+
+{{field}} with (<field> <operator>)
+
+users where followers greater
+
+
+<operator>: "is", in", "greater than", "lesser than"
