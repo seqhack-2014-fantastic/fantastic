@@ -30,7 +30,9 @@ defmodule Fantastic.Mixfile do
       {:cowboy, "~> 1.0.0"},
       {:plug,   "~> 0.7.0"},
       {:postgrex, ">= 0.0.0"},
-      {:ecto, "~> 0.2.0"}
+      {:ecto, "~> 0.2.0"},
+      {:ecto_riak_adapter, git: "/Users/HashNuke/projects/ecto_riak_adapter", branch: "master"},
+      {:riak_pb, github: "HashNuke/riak_pb", branch: "plugin-fix-for-rebar-2.5.1", override: true}
     ]
   end
 end
