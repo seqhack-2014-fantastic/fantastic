@@ -6,7 +6,12 @@ defmodule ApiRouter do
   plug :dispatch
 
   post "/events" do
-    send_resp(conn, 200, "events")
+    {:ok, body, conn} = read_body(conn)
+    data = Poison.decode!(body)
+
+    parsed_data = Fantastic.DataParser.parse(data)
+    {:ok, key} = Fantastic.Data.insert parsed_data
+    send_resp conn, 200, Poison.encode!(%{key: key})
   end
 
   forward "/", to: NoRouteFoundRouter

@@ -33,6 +33,11 @@ riak-admin bucket-type activate fantastic-dev
 ```
 
 
+### Test curl call
+
+
+curl -X POST -d '{"x": 1, "y": 2.2, "z": "foo"}' http://localhost:4000/api/events
+Repo.run_custom fn(pid)-> :riakc_pb_socket.search(pid, "fantastic-dev", "event_s:foo") end
 
 ### Query language brainstorming
 
