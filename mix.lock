@@ -4,6 +4,7 @@
   "ecto": {:package, "0.2.5"},
   "ecto_riak_adapter": {:git, "/Users/HashNuke/projects/ecto_riak_adapter", "f95d378cebdb04f2bcaec74d070dc27b6185a3c6", [branch: "master"]},
   "meck": {:git, "git://github.com/basho/meck.git", "d4730c6d47e437b1dcd170551506e7b10596cd5a", [tag: "0.8.1p1"]},
+  "neotoma": {:git, "git://github.com/seancribbs/neotoma.git", "6c4a6009d3f34da2ec42c4f3585dae0abbb49dfc", []},
   "plug": {:package, "0.7.0"},
   "poison": {:git, "git://github.com/devinus/poison.git", "7d78c836fcd535f4277ab0a19903c18f04104e2d", []},
   "poolboy": {:package, "1.2.1"},
