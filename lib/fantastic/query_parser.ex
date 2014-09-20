@@ -3,7 +3,7 @@ defmodule Fantastic.QueryParser do
 
   alias Fantastic.Operators
 
-  @op_terms ["show", "is", "is not", "within", "by", "export"]
+  @op_terms ["show", "with", "is", "is not", "within", "by", "export"]
 
 
   def parse(str) when is_binary(str) do
@@ -34,6 +34,9 @@ defmodule Fantastic.QueryParser do
 
   def partition_query_parts(str_parts) do
     Enum.reduce str_parts, [], fn(part, query_parts)->
+      IO.inspect @op_terms
+      IO.inspect part
+      IO.inspect Enum.member?(@op_terms, part)
       cond do
         Enum.empty?(query_parts) || Enum.member?(@op_terms, part) ->
           query_parts ++ [[part]]

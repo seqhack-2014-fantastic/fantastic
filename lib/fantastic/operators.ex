@@ -19,12 +19,12 @@ defmodule Fantastic.Operators do
   end
 
 
-  def translate("with", [field, "lesser than", value]) do
+  def translate("with", [field, "lesser", "than", value]) do
     "#{field}:[* TO #{value}]"
   end
 
 
-  def translate("with", [field, "greater than", value]) do
+  def translate("with", [field, "greater", "than", value]) do
     "#{field}:[#{value} TO *]"
   end
 
