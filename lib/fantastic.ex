@@ -9,6 +9,8 @@ defmodule Fantastic do
     children = [
       # Define workers and child supervisors to be supervised
       # worker(Fantastic.Worker, [arg1, arg2, arg3])
+      worker(Fantastic.Server, []),
+      worker(Repo, [])
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

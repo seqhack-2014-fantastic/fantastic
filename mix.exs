@@ -12,7 +12,7 @@ defmodule Fantastic.Mixfile do
   #
   # Type `mix help compile.app` for more information
   def application do
-    [applications: [:logger, :cowboy, :plug, :postgrex, :ecto],
+    [applications: [:logger, :cowboy, :plug, :postgrex, :ecto, :poison],
      mod: {Fantastic, []}]
   end
 
@@ -28,6 +28,7 @@ defmodule Fantastic.Mixfile do
   defp deps do
     [
       {:cowboy, "~> 1.0.0"},
+      {:poison, github: "devinus/poison"},
       {:plug,   "~> 0.7.0"},
       {:postgrex, ">= 0.0.0"},
       {:ecto, "~> 0.2.0"},
